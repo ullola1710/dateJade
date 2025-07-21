@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+div h1,
+h3 {
+    text-align: center;
+}
+
+/* Estilo para el título "Date con Jade" */
+.decorated {
+    position: relative;
+    /* para el ::after */
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin: 3rem 0;
+    padding: 2rem 0;
+
+}
+
+/* Crear cuadraro -> rombo */
+h1.decorated::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    /* en el borde inferior del h1 */
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(45deg);
+    width: 1rem;
+    height: 1rem;
+    background: #e63946;
+}
+
+/* Estilo general para contenedores */
+/* About me */
+.about-container {
+  margin: 2rem 0;     /* separación vertical */
+  gap: 1.5rem;        /* espacio entre img y texto */
+  flex-wrap: wrap;    /* que baje en pantallas muy pequeñas */
+}
+
+/* La imagen ya es responsive con .img-fluid; sólo ajuste extra */
+.about-image {
+  max-width: 150px;   /* nunca más ancha de 150px */
+  border-radius: 8px;
+}
+
+/* El texto dentro de su recuadro */
+.about-content {
+  background: #f8f9fa;
+  border: 2px solid #e63946;
+  border-radius: 8px;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+/* Ajustes finos de párrafos para evitar márgenes extra */
+.about-content h2,
+.about-content p {
+  margin-bottom: 0.75rem;
+}
+
+/* Responsive: en móviles, img más pequeña y block */
+@media (max-width: 576px) {
+  .about-image {
+    max-width: 100px;
+    margin: 0 auto 1rem;
+  }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+/* Carrusel */
+/* Estilo para las slides */
+#carouselExampleSlidesOnly .carousel-item {
+    /* aspect-ratio: 16 / 9; */
+    height: 50vh;
+    overflow: hidden;
+}
+
+
+/* Estilo para las imagenes, que estén centrada y todo */
+#carouselExampleSlidesOnly .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Media para tabletas */
+@media (max-width: 992px) {
+    #carouselExampleSlidesOnly .carousel-item {
+        height: 40vh;
+    }
+}
+
+/* Media para celulares */
+@media (max-width: 768x) {
+    #carouselExampleSlidesOnly .carousel-item {
+        height: 35vh;
+    }
+}
+
+@media (max-width: 576px) {
+  #carouselExampleSlidesOnly .carousel-item {
+    height: 30vh;
+  }
+}
+
